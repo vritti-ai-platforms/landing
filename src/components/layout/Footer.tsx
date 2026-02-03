@@ -268,8 +268,8 @@ export default function Footer() {
               alignItems: 'center' 
             }}
           >
-            <Link href="/privacy" style={{ textDecoration: 'none' }}>
-              <Typography 
+            <Link href="/privacy-policy" style={{ textDecoration: 'none' }}>
+              <Typography
                 variant="body2"
                 sx={{
                   color: 'var(--quantum-color-text-disabled)',

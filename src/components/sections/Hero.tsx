@@ -58,6 +58,7 @@ export default function Hero() {
           minHeight: '100vh',
           display: 'flex',
           alignItems: 'center',
+          pt: { xs: '100px', md: '120px' },
         }}
       >
         <Stagger

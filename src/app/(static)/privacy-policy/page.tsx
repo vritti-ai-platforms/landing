@@ -6,7 +6,7 @@ import { SITE_CONFIG, CONTACT_INFO } from '@/lib/constants/content';
 import GradientText from '@/components/ui/GradientText';
 
 export default function Privacy() {
-  const lastUpdated = '2024-06-16';
+  const lastUpdated = '2026-02-04';
 
   return (
     <div style={{ paddingTop: '80px' }}>
@@ -108,6 +108,45 @@ export default function Privacy() {
                 </ul>
               </div>
 
+              {/* OAuth Authentication & Email Access */}
+              <div>
+                <Typography variant="h2" intent="brand" sx={{ fontWeight: 600, mb: 3 }}>
+                  OAuth Authentication & Email Access
+                </Typography>
+
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
+                  Vritti AI supports authentication through third-party OAuth providers, including X (formerly Twitter).
+                  When you choose to sign in using OAuth, we may request access to your email address from these providers.
+                </Typography>
+
+                <Typography variant="h3" sx={{ fontWeight: 600, mb: 2 }}>
+                  How We Use Email from OAuth Providers
+                </Typography>
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
+                  Email addresses obtained through OAuth (including X/Twitter OAuth) are used exclusively for:
+                </Typography>
+                <ul style={{ marginLeft: '1.5rem', marginBottom: '1.5rem' }}>
+                  <li><Typography variant="body1" intent="secondary">Account authentication and verification</Typography></li>
+                  <li><Typography variant="body1" intent="secondary">Critical service updates and security notifications</Typography></li>
+                  <li><Typography variant="body1" intent="secondary">Account-related communication (password resets, billing, etc.)</Typography></li>
+                </ul>
+
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
+                  <strong>We never sell, rent, or share your email address with third parties for marketing purposes.</strong>
+                  {' '}Your email is treated as confidential information and protected under our data security policies.
+                </Typography>
+
+                <Typography variant="h3" sx={{ fontWeight: 600, mb: 2 }}>
+                  OAuth Provider Data
+                </Typography>
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7 }}>
+                  When you authenticate via OAuth providers like X (Twitter), we may receive limited profile information
+                  such as your name, profile picture, and email address. This information is used solely to create and
+                  maintain your Vritti AI account. You maintain control over permissions granted to OAuth providers through
+                  their respective settings.
+                </Typography>
+              </div>
+
               {/* How We Use Information */}
               <div>
                 <Typography variant="h2" intent="brand" sx={{ fontWeight: 600, mb: 3 }}>
@@ -164,9 +203,11 @@ export default function Privacy() {
                 <Typography variant="h2" intent="brand" sx={{ fontWeight: 600, mb: 3 }}>
                   How We Share Your Information
                 </Typography>
-                
+
                 <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
-                  We do not sell, trade, or rent your personal information. We may share information in the following situations:
+                  <strong>We do not sell, trade, rent, or share your personal information, including email addresses
+                  obtained through OAuth providers, with third parties for their marketing purposes.</strong> We may
+                  share information only in the following limited situations:
                 </Typography>
                 <ul style={{ marginLeft: '1.5rem', marginBottom: '1.5rem' }}>
                   <li><Typography variant="body1" intent="secondary">With service providers who help us operate our business</Typography></li>
@@ -181,11 +222,21 @@ export default function Privacy() {
                 <Typography variant="h2" intent="brand" sx={{ fontWeight: 600, mb: 3 }}>
                   Data Security
                 </Typography>
-                
-                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7 }}>
-                  We implement appropriate technical and organizational security measures to protect your personal information 
-                  against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over 
+
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
+                  We implement appropriate technical and organizational security measures to protect your personal information
+                  against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over
                   the internet is 100% secure, and we cannot guarantee absolute security.
+                </Typography>
+
+                <Typography variant="h3" sx={{ fontWeight: 600, mb: 2 }}>
+                  Compliance with Indian Data Protection Laws
+                </Typography>
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7 }}>
+                  Vritti AI is committed to compliance with India's Digital Personal Data Protection (DPDP) Act and other
+                  applicable data protection regulations. We process personal data of Indian users in accordance with these
+                  laws, including obtaining explicit consent for data processing, maintaining data localization where required,
+                  and honoring user rights to access, correction, and deletion of personal information.
                 </Typography>
               </div>
 

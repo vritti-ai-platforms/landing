@@ -6,8 +6,8 @@ import { SITE_CONFIG, CONTACT_INFO } from '@/lib/constants/content';
 import GradientText from '@/components/ui/GradientText';
 
 export default function Terms() {
-  const lastUpdated = '2024-06-16';
-  const effectiveDate = '2024-06-16';
+  const lastUpdated = '2026-02-04';
+  const effectiveDate = '2026-02-04';
 
   return (
     <div style={{ paddingTop: '80px' }}>
@@ -95,7 +95,8 @@ export default function Terms() {
                 </Typography>
                 
                 <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
-                  {SITE_CONFIG.name} provides AI-powered business operating system solutions for small businesses, including:
+                  {SITE_CONFIG.name} provides an AI-powered business operating system for small businesses in India,
+                  including salons, clinics, restaurants, and service-based businesses. Our Service includes:
                 </Typography>
                 <ul style={{ marginLeft: '1.5rem', marginBottom: '1.5rem' }}>
                   <li><Typography variant="body1" intent="secondary">Customer relationship management</Typography></li>
@@ -105,6 +106,32 @@ export default function Terms() {
                   <li><Typography variant="body1" intent="secondary">WhatsApp business integration</Typography></li>
                   <li><Typography variant="body1" intent="secondary">AI-powered business insights</Typography></li>
                 </ul>
+
+                <Typography variant="h3" sx={{ fontWeight: 600, mb: 2 }}>
+                  AI System Capabilities and Limitations
+                </Typography>
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
+                  Our Service leverages artificial intelligence and machine learning technologies. While we strive for
+                  accuracy and reliability, AI systems:
+                </Typography>
+                <ul style={{ marginLeft: '1.5rem', marginBottom: '1.5rem' }}>
+                  <li><Typography variant="body1" intent="secondary">
+                    May produce errors, inaccuracies, or incomplete information
+                  </Typography></li>
+                  <li><Typography variant="body1" intent="secondary">
+                    Improve over time through learning but are not infallible
+                  </Typography></li>
+                  <li><Typography variant="body1" intent="secondary">
+                    Require human oversight for critical business decisions
+                  </Typography></li>
+                  <li><Typography variant="body1" intent="secondary">
+                    Should not replace professional advice for legal, financial, or medical matters
+                  </Typography></li>
+                </ul>
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7 }}>
+                  You acknowledge that AI-generated insights and recommendations are provided as tools to assist your
+                  decision-making and should be verified before taking action based on them.
+                </Typography>
               </div>
 
               {/* User Accounts */}
@@ -125,6 +152,41 @@ export default function Terms() {
                 
                 <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7 }}>
                   You are responsible for all activities that occur under your account.
+                </Typography>
+              </div>
+
+              {/* OAuth Authentication */}
+              <div>
+                <Typography variant="h2" intent="brand" sx={{ fontWeight: 600, mb: 3 }}>
+                  OAuth-Based Authentication
+                </Typography>
+
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
+                  Vritti AI offers authentication through third-party OAuth providers, including X (formerly Twitter),
+                  Google, and other supported platforms. By using OAuth to access our Service:
+                </Typography>
+                <ul style={{ marginLeft: '1.5rem', marginBottom: '1.5rem' }}>
+                  <li><Typography variant="body1" intent="secondary">
+                    You grant us permission to access limited information from your OAuth provider account, including
+                    your email address, as authorized through the OAuth consent flow
+                  </Typography></li>
+                  <li><Typography variant="body1" intent="secondary">
+                    You acknowledge that your use of third-party OAuth providers is subject to their respective terms
+                    and privacy policies
+                  </Typography></li>
+                  <li><Typography variant="body1" intent="secondary">
+                    You understand that we use your email address solely for authentication, account communication,
+                    and critical service updates
+                  </Typography></li>
+                  <li><Typography variant="body1" intent="secondary">
+                    You can revoke OAuth access through the provider's settings at any time, which may limit your
+                    ability to access certain features
+                  </Typography></li>
+                </ul>
+
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7 }}>
+                  We obtain explicit consent before accessing your email through OAuth providers and never share this
+                  information with third parties for marketing purposes.
                 </Typography>
               </div>
 
@@ -173,8 +235,8 @@ export default function Terms() {
                 
                 <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7 }}>
                   Your privacy is important to us. Our collection and use of personal information is governed by our{' '}
-                  <a 
-                    href="/privacy"
+                  <a
+                    href="/privacy-policy"
                     style={{ color: 'var(--quantum-color-action-primary)', textDecoration: 'underline' }}
                   >
                     Privacy Policy
@@ -236,14 +298,35 @@ export default function Terms() {
                 <Typography variant="h2" intent="brand" sx={{ fontWeight: 600, mb: 3 }}>
                   Disclaimers and Limitation of Liability
                 </Typography>
-                
+
                 <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
-                  THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. TO THE FULLEST EXTENT PERMITTED BY LAW, 
-                  WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED.
+                  THE SERVICE, INCLUDING ALL AI-POWERED FEATURES AND RECOMMENDATIONS, IS PROVIDED "AS IS" AND "AS AVAILABLE"
+                  WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, WE
+                  DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO:
                 </Typography>
-                
+                <ul style={{ marginLeft: '1.5rem', marginBottom: '1.5rem' }}>
+                  <li><Typography variant="body1" intent="secondary">
+                    Warranties of merchantability and fitness for a particular purpose
+                  </Typography></li>
+                  <li><Typography variant="body1" intent="secondary">
+                    Warranties that the Service will be error-free, uninterrupted, or secure
+                  </Typography></li>
+                  <li><Typography variant="body1" intent="secondary">
+                    Warranties regarding the accuracy, completeness, or reliability of AI-generated content, insights,
+                    or recommendations
+                  </Typography></li>
+                  <li><Typography variant="body1" intent="secondary">
+                    Warranties that AI systems will meet your specific business requirements or expectations
+                  </Typography></li>
+                </ul>
+
+                <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
+                  YOU ACKNOWLEDGE THAT AI SYSTEMS ARE PROBABILISTIC IN NATURE AND MAY PRODUCE UNEXPECTED OR INCORRECT
+                  RESULTS. YOU AGREE TO VERIFY ALL AI-GENERATED INFORMATION BEFORE MAKING BUSINESS DECISIONS BASED ON IT.
+                </Typography>
+
                 <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7 }}>
-                  IN NO EVENT SHALL {SITE_CONFIG.name.toUpperCase()} BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, 
+                  IN NO EVENT SHALL {SITE_CONFIG.name.toUpperCase()} BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
                   CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF YOUR USE OF THE SERVICE.
                 </Typography>
               </div>
@@ -277,15 +360,18 @@ export default function Terms() {
                 <Typography variant="h2" intent="brand" sx={{ fontWeight: 600, mb: 3 }}>
                   Governing Law and Dispute Resolution
                 </Typography>
-                
+
                 <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7, mb: 2 }}>
-                  These Terms are governed by and construed in accordance with the laws of California, United States, 
-                  without regard to conflict of law principles.
+                  These Terms are governed by and construed in accordance with the laws of California, United States,
+                  without regard to conflict of law principles. For users in India, these Terms also comply with
+                  applicable Indian laws, including the Information Technology Act, 2000, and the Digital Personal
+                  Data Protection Act.
                 </Typography>
-                
+
                 <Typography variant="body1" intent="secondary" sx={{ lineHeight: 1.7 }}>
-                  Any disputes arising from these Terms will be resolved through binding arbitration in accordance 
-                  with the rules of the American Arbitration Association.
+                  Any disputes arising from these Terms will be resolved through binding arbitration in accordance
+                  with the rules of the American Arbitration Association. Users in India may also seek resolution
+                  through courts of competent jurisdiction in India for matters relating to Indian law compliance.
                 </Typography>
               </div>
 

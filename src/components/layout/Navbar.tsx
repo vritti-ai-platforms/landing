@@ -32,7 +32,7 @@ export default function Navbar() {
 					top: 0,
 					left: 0,
 					right: 0,
-					zIndex: 50,
+					zIndex: 1000,
 					borderBottom: "1px solid var(--quantum-color-border-glass)",
 				}}
 			>
@@ -64,8 +64,8 @@ export default function Navbar() {
 								<Image
 									src="/vritti-logo.png"
 									alt="Vritti Logo"
-									width={100}
-									height={40}
+									width={50}
+									height={20}
 									priority
 								/>
 							</Hover>

@@ -190,7 +190,7 @@ export const MISSION_CONTENT = {
 
 export const CONTACT_INFO = {
   whatsapp: "+1234567890",
-  email: "hello@vritti.ai",
+  email: "support@vritti.ai",
   address: "San Francisco, CA",
   socialLinks: {
     twitter: "https://twitter.com/vrittiAI",
