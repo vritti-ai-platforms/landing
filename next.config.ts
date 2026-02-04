@@ -1,27 +1,26 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // SSR enabled for Vercel deployment
-  
-  // Enable image optimization for Vercel
+  // Static export for GitHub Pages
+  output: 'export',
+
+  // Disable image optimization for static export
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+    unoptimized: true,
   },
-  
+
+  // Trailing slashes for better GitHub Pages compatibility
+  trailingSlash: true,
+
   experimental: {
     optimizePackageImports: ['quantum-ui', 'framer-motion'],
   },
-  
+
   typescript: {
     // Allow production builds to succeed even if there are type errors
     ignoreBuildErrors: false,
   },
-  
+
   eslint: {
     // Allow production builds to succeed even if there are ESLint errors
     // TODO: Fix ESLint errors and set back to false
