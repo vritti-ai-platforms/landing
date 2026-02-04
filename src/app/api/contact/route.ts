@@ -56,8 +56,8 @@ export async function POST(request: NextRequest) {
     // Example with Resend:
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // await resend.emails.send({
-    //   from: 'noreply@vritti.ai',
-    //   to: 'hello@vritti.ai',
+    //   from: 'noreply@vrittiai.com',
+    //   to: 'support@vrittiai.com',
     //   subject: `New Contact: ${body.name}`,
     //   html: `
     //     <h2>New Contact Form Submission</h2>

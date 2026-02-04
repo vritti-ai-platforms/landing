@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: "Vritti AI",
   description: "AI Business Operating System for Small Businesses",
-  url: "https://vritti.ai",
+  url: "https://vrittiai.com",
   tagline: "Your AI Business Partner That Never Sleeps",
   subtagline: "Transform your small business with private AI. From WhatsApp chaos to intelligent automation.",
 };
@@ -190,7 +190,7 @@ export const MISSION_CONTENT = {
 
 export const CONTACT_INFO = {
   whatsapp: "+1234567890",
-  email: "support@vritti.ai",
+  email: "support@vrittiai.com",
   address: "San Francisco, CA",
   socialLinks: {
     twitter: "https://twitter.com/vrittiAI",

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description:
       'AI-powered business operating system for small businesses. Replace WhatsApp chaos with intelligent automation.',
     type: 'website',
-    url: 'https://vritti.ai',
+    url: 'https://vrittiai.com',
     siteName: 'Vritti AI',
     locale: 'en_US',
   },
