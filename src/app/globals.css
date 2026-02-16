@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+@custom-variant dark (&:is(.dark *));
+@import '@vritti/quantum-ui/index.css';
+
+/* Figma-specific custom properties */
+:root {
+  --vritti-text-dark: #0a1d36;
+  --vritti-text-secondary: #5a728d;
+  --vritti-bg-light: rgba(245, 249, 253, 0.5);
+  --vritti-border: #e3effb;
+  --vritti-success: #4aa651;
+  --vritti-error: #dc2626;
+  --vritti-radius-card: 1rem;
+  --vritti-radius-pill: 9999px;
+}
+
+.dark {
+  --vritti-text-dark: #f0f4f8;
+  --vritti-text-secondary: #94a3b8;
+  --vritti-bg-light: rgba(30, 41, 59, 0.5);
+  --vritti-border: rgba(51, 65, 85, 0.5);
+  --vritti-success: #4ade80;
+  --vritti-error: #f87171;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--vritti-text-dark);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility classes for Figma design tokens */
+.text-vritti-secondary {
+  color: var(--vritti-text-secondary);
+}
+
+.bg-vritti-light {
+  background-color: var(--vritti-bg-light);
+}
+
+.border-vritti {
+  border-color: var(--vritti-border);
+}
+
+/* Scroll animation base */
+@import '../styles/animations.css';
