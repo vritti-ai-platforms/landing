@@ -1,229 +1,259 @@
-export const SITE_CONFIG = {
-  name: "Vritti AI",
-  description: "AI Business Operating System for Small Businesses",
-  url: "https://vrittiai.com",
-  tagline: "Your AI Business Partner That Never Sleeps",
-  subtagline: "Transform your small business with private AI. From WhatsApp chaos to intelligent automation.",
-};
+export const NAV_LINKS = [
+  { label: 'Platform', href: '#modules' },
+  { label: 'Capabilities', href: '#ai-capabilities' },
+  { label: 'Integrations', href: '#how-it-works' },
+  { label: 'Resources', href: '#value-props' },
+  { label: 'Pricing', href: '#cta' },
+] as const;
 
-export const NAVIGATION_ITEMS = [
-  { href: "/how-it-works", label: "How It Works" },
-  { href: "/mission-vision", label: "Mission" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+export const HERO = {
+  badge: 'The Platform for Modern Business',
+  heading: 'Run Your Entire Business on One Platform.',
+  subheading:
+    'A modular platform that manages leads, bookings, and inventory autonomously. Stop micromanaging, start growing.',
+  primaryCta: 'Get Early Access',
+  secondaryCta: 'View Interactive Demo',
+} as const;
 
-export const HERO_CONTENT = {
-  headline: "Your AI Business Partner That Never Sleeps",
-  subheadline: "Transform your small business with private AI. From WhatsApp chaos to intelligent automation.",
-  trustBar: "Join 500+ businesses on the waitlist",
-  primaryCTA: "Get Early Access",
-  secondaryCTA: "Watch 2-Min Demo",
-};
+export const DASHBOARD_STATS = [
+  {
+    icon: 'Users' as const,
+    label: 'Active Leads',
+    value: '1,284',
+    change: '+12%',
+    positive: true,
+    bgColor: 'bg-blue-500/10',
+    iconColor: 'text-blue-500',
+  },
+  {
+    icon: 'CalendarCheck' as const,
+    label: 'Bookings',
+    value: '342',
+    change: '+8%',
+    positive: true,
+    bgColor: 'bg-blue-100 dark:bg-blue-900/30',
+    iconColor: 'text-blue-500',
+  },
+  {
+    icon: 'Package' as const,
+    label: 'Inventory Items',
+    value: '892',
+    change: '-3%',
+    positive: false,
+    bgColor: 'bg-green-500/10',
+    iconColor: 'text-green-600',
+  },
+  {
+    icon: 'IndianRupee' as const,
+    label: 'Revenue (MTD)',
+    value: '₹8.2L',
+    change: '+24%',
+    positive: true,
+    bgColor: 'bg-yellow-500/10',
+    iconColor: 'text-yellow-600',
+  },
+] as const;
 
-export const PAIN_POINTS = [
+export const VALUE_PROPS = [
   {
-    title: "Customer bookings scattered across WhatsApp",
-    description: "Lost messages, double bookings, and confused customers",
-    icon: "📱",
+    icon: 'Zap' as const,
+    title: 'Automate Busywork',
+    description:
+      'Reduce manual admin tasks by 70% with autonomous agents.',
   },
   {
-    title: "Inventory tracked on paper or Excel",
-    description: "No real-time updates, frequent stockouts, manual counting",
-    icon: "📊",
+    icon: 'Database' as const,
+    title: 'One Single Source',
+    description:
+      'Replace 5 disconnected tools with one cohesive operating system.',
   },
   {
-    title: "No idea which services are profitable",
-    description: "Flying blind on pricing, margins, and business health",
-    icon: "🤷‍♂️",
+    icon: 'TrendingUp' as const,
+    title: 'Scale Without Chaos',
+    description:
+      'Add new branches and users instantly without breaking processes.',
   },
-  {
-    title: "Spending nights doing manual reports",
-    description: "Hours wasted on data entry instead of growing your business",
-    icon: "📄",
-  },
-  {
-    title: "Missing appointments due to poor scheduling",
-    description: "Lost revenue from no-shows and scheduling conflicts",
-    icon: "⏰",
-  },
-  {
-    title: "Can't compete with tech-savvy competitors",
-    description: "Falling behind businesses with modern systems",
-    icon: "🏃‍♂️", // Keep emoji for now - no SVG generated due to credits
-  },
-];
-
-export const SOLUTION_FEATURES = [
-  {
-    title: "Smart Scheduling",
-    description: "Never double-book again",
-    details: "AI-powered scheduling that understands your business patterns and prevents conflicts",
-    icon: "🗓️",
-  },
-  {
-    title: "Customer Intelligence",
-    description: "Know every customer's history",
-    details: "Complete customer profiles with preferences, history, and personalized insights",
-    icon: "👥",
-  },
-  {
-    title: "Inventory Tracking",
-    description: "Real-time stock alerts",
-    details: "Automated inventory management with smart reorder points and supplier integration",
-    icon: "📦",
-  },
-  {
-    title: "Financial Intelligence",
-    description: "See profit per service",
-    details: "Real-time profitability analysis and business performance insights",
-    icon: "💰",
-  },
-  {
-    title: "AI Assistant",
-    description: "Ask anything about your business",
-    details: "Natural language queries about sales, customers, inventory, and performance",
-    icon: "🤖",
-  },
-];
-
-export const INDUSTRIES = [
-  {
-    name: "Salons & Spas",
-    description: "Stylists love the appointment booking",
-    details: "Streamlined scheduling, client history, and service tracking",
-    image: "💇‍♀️",
-  },
-  {
-    name: "Restaurants",
-    description: "Table management made simple",
-    details: "Reservations, orders, inventory, and staff coordination",
-    image: "🍽️",
-  },
-  {
-    name: "Clinics",
-    description: "Patient history at fingertips",
-    details: "Medical records, appointments, and treatment tracking",
-    image: "🏥",
-  },
-  {
-    name: "Driving Schools",
-    description: "Instructor scheduling simplified",
-    details: "Lesson booking, progress tracking, and vehicle management",
-    image: "🚗",
-  },
-];
-
-export const PRICING_CONTENT = {
-  title: "Everything Included",
-  monthlyPrice: "$114",
-  breakdown: "$99 AI + ~$15 hosting",
-  additionalLocation: "$29/month each",
-  features: [
-    "All features included",
-    "Unlimited staff accounts",
-    "24/7 AI assistant",
-    "WhatsApp integration",
-    "Mobile + Desktop access",
-    "Free training & support",
-  ],
-  guarantee: "No credit card required • Setup in 5 minutes",
-};
+] as const;
 
 export const HOW_IT_WORKS_STEPS = [
   {
-    step: 1,
-    title: "Get Your Private Vritti Instance",
-    description: "We spin up your dedicated AI business system in minutes",
-    details: "Secure, private environment tailored to your business needs",
+    icon: 'Plug' as const,
+    number: 1,
+    title: 'Connect',
+    description: 'Integrate WhatsApp & Website.',
+    color: 'blue' as const,
   },
   {
-    step: 2,
-    title: "Tell AI About Your Business",
-    description: "Simple conversation to set up your operations",
-    details: "No technical setup - just chat with AI about how your business works",
+    icon: 'Settings' as const,
+    number: 2,
+    title: 'Configure',
+    description: 'Select your Modules.',
+    color: 'purple' as const,
   },
   {
-    step: 3,
-    title: "AI Sets Everything Up",
-    description: "Workspace created automatically based on your needs",
-    details: "Custom workflows, integrations, and business logic configured instantly",
+    icon: 'Brain' as const,
+    number: 3,
+    title: 'Train',
+    description: 'AI learns your inventory & rules.',
+    color: 'green' as const,
   },
   {
-    step: 4,
-    title: "Customers Use WhatsApp",
-    description: "No app downloads - they book through familiar WhatsApp",
-    details: "Seamless experience for customers, powerful automation for you",
+    icon: 'Rocket' as const,
+    number: 4,
+    title: 'Launch',
+    description: 'Go live in less than 24 hours.',
+    color: 'amber' as const,
   },
-  {
-    step: 5,
-    title: "Grow with Intelligence",
-    description: "AI learns and optimizes your business continuously",
-    details: "Real-time insights, automated improvements, and business growth",
-  },
-];
+] as const;
 
-export const MISSION_CONTENT = {
-  mission: "To democratize enterprise-grade business intelligence by giving every small business owner their own private AI that manages operations through natural conversation.",
-  vision: "A world where a salon owner in Mumbai has the same technological advantage as a Fortune 500 company.",
-  vritteMeaning: "Vritti (Sanskrit): Mental modifications or thought processes. We help optimize thought processes by offloading operational complexity to AI.",
-  values: [
-    {
-      title: "Simplicity First",
-      description: "Technology should work for people, not the other way around",
-    },
-    {
-      title: "Affordable Innovation",
-      description: "Enterprise capabilities at small business prices",
-    },
-    {
-      title: "Privacy by Design",
-      description: "Your business data stays private and secure",
-    },
-    {
-      title: "Continuous Learning",
-      description: "AI that gets smarter with your business",
-    },
-  ],
-};
+export const AI_CHAT_MESSAGES = [
+  {
+    sender: 'user' as const,
+    initials: 'JD',
+    text: 'Do we have the premium suite available next Tuesday?',
+    time: '10:23 AM',
+  },
+  {
+    sender: 'ai' as const,
+    initials: 'V',
+    text: 'Yes! We have 2 suites available. Shall I hold one for you?',
+    time: '10:23 AM',
+  },
+  {
+    sender: 'user' as const,
+    initials: 'JD',
+    text: 'Yes please! Book it for 2 nights.',
+    time: '10:24 AM',
+  },
+  {
+    sender: 'ai' as const,
+    initials: 'V',
+    text: "Perfect! I've reserved Premium Suite #5 for Tuesday-Thursday. Confirmation sent to your email. Is there anything else you need?",
+    time: '10:24 AM',
+  },
+] as const;
 
-export const CONTACT_INFO = {
-  whatsapp: "+1234567890",
-  email: "support@vrittiai.com",
-  address: "San Francisco, CA",
-  socialLinks: {
-    twitter: "https://twitter.com/vrittiAI",
-    linkedin: "https://linkedin.com/company/vritti-ai",
+export const AI_ACCORDION_ITEMS = [
+  {
+    title: 'Natural Language Processing',
+    content:
+      'Vritti AI understands context, intent, and nuance. It speaks like a human, not a robot—making every customer interaction feel personal and natural.',
+    defaultOpen: true,
   },
-};
+  {
+    title: 'Permission-Aware',
+    content:
+      'The AI respects role-based access controls, ensuring each user only sees and does what they are authorized to.',
+    defaultOpen: false,
+  },
+  {
+    title: 'Omnichannel',
+    content:
+      'Engage customers seamlessly across WhatsApp, web chat, email, and more—all from a single AI-powered interface.',
+    defaultOpen: false,
+  },
+] as const;
 
-export const FAQ_ITEMS = [
-  {
-    question: "What happens to my data if I cancel?",
-    answer: "You own your data completely. We provide export tools and delete all data within 30 days of cancellation.",
-  },
-  {
-    question: "Do I need technical knowledge?",
-    answer: "No technical knowledge required. Setup is conversational - just tell the AI about your business.",
-  },
-  {
-    question: "Can I add more businesses later?",
-    answer: "Yes, additional locations are $29/month each with the same full feature set.",
-  },
-  {
-    question: "Is my business data secure?",
-    answer: "Yes, each business gets a private AI instance with enterprise-grade security and encryption.",
-  },
-  {
-    question: "How does WhatsApp integration work?",
-    answer: "Customers message your business WhatsApp number, and AI handles bookings, inquiries, and follow-ups automatically.",
-  },
-];
+export const AI_LEARNING_CARD = {
+  title: 'Real-time Learning',
+  description:
+    'The AI continuously learns from every interaction, getting smarter about your business, products, and customer preferences over time.',
+} as const;
 
-export const STATS = {
-  waitlistCount: "500+",
-  industriesSupported: "5",
-  revenueManaged: "$50M+",
-  hoursSaved: "15+",
-};
+export const MODULES = [
+  {
+    icon: 'Users' as const,
+    title: 'Lead Management',
+    suite: 'Sales Suite',
+    bgColor: 'bg-blue-50 dark:bg-blue-950/50',
+    borderColor: 'border-blue-200 dark:border-blue-800',
+  },
+  {
+    icon: 'Contact' as const,
+    title: 'CRM',
+    suite: 'Sales Suite',
+    bgColor: 'bg-indigo-50 dark:bg-indigo-950/50',
+    borderColor: 'border-indigo-200 dark:border-indigo-800',
+  },
+  {
+    icon: 'Package' as const,
+    title: 'Inventory',
+    suite: 'Ops Suite',
+    bgColor: 'bg-violet-50 dark:bg-violet-950/50',
+    borderColor: 'border-violet-200 dark:border-violet-800',
+  },
+  {
+    icon: 'Building2' as const,
+    title: 'Vendor Management',
+    suite: 'Ops Suite',
+    bgColor: 'bg-fuchsia-50 dark:bg-fuchsia-950/50',
+    borderColor: 'border-fuchsia-200 dark:border-fuchsia-800',
+  },
+  {
+    icon: 'Calendar' as const,
+    title: 'Booking System',
+    suite: 'CX Suite',
+    bgColor: 'bg-emerald-50 dark:bg-emerald-950/50',
+    borderColor: 'border-emerald-200 dark:border-emerald-800',
+  },
+  {
+    icon: 'Headphones' as const,
+    title: 'Customer Support',
+    suite: 'CX Suite',
+    bgColor: 'bg-teal-50 dark:bg-teal-950/50',
+    borderColor: 'border-teal-200 dark:border-teal-800',
+  },
+] as const;
+
+export const SUITES = [
+  {
+    icon: 'BarChart3' as const,
+    title: 'Sales Suite',
+    description:
+      'Manage leads, close deals, and nurture customer relationships.',
+    bgColor: 'bg-primary/10',
+  },
+  {
+    icon: 'Layers' as const,
+    title: 'Ops Suite',
+    description:
+      'Streamline inventory, vendor management, and operations.',
+    bgColor: 'bg-blue-100/50',
+  },
+  {
+    icon: 'Heart' as const,
+    title: 'CX Suite',
+    description:
+      'Deliver exceptional experiences with bookings and support.',
+    bgColor: 'bg-green-500/10',
+  },
+] as const;
+
+export const CTA = {
+  heading: 'Ready to modernize your operations?',
+  subheading:
+    'See how Vritti can automate your business in under 24 hours.',
+  buttonText: 'Book a Personalized Demo',
+} as const;
+
+export const FOOTER_LINKS = {
+  product: {
+    title: 'Product',
+    links: [
+      { label: 'Modules', href: '#modules' },
+      { label: 'AI Capabilities', href: '#ai-capabilities' },
+      { label: 'How It Works', href: '#how-it-works' },
+      { label: 'Pricing', href: '#cta' },
+    ],
+  },
+  company: {
+    title: 'Company',
+    links: [
+      { label: 'About Us', href: '#' },
+      { label: 'Contact', href: '#' },
+      { label: 'Privacy Policy', href: '#' },
+      { label: 'Terms of Service', href: '#' },
+    ],
+  },
+} as const;
+

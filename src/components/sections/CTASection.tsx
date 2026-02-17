@@ -1,293 +1,78 @@
-'use client';
-
-import { Typography } from '@vritti/quantum-ui/Typography';
-import { Paper } from '@vritti/quantum-ui/Paper';
+import { Check } from 'lucide-react';
 import { Button } from '@vritti/quantum-ui/Button';
-import Link from 'next/link';
-import { PRICING_CONTENT } from '@/lib/constants/content';
-import GradientText from '@/components/ui/GradientText';
-import { Animated, Stagger, Continuous, Hover } from '@/components/ui/Animated';
+import { Typography } from '@vritti/quantum-ui/Typography';
+import { DoodleSparkle } from '@/components/ui/Doodles';
+import { CTA } from '@/lib/constants/content';
 
-export default function CTASection() {
+export function CTASection() {
   return (
-    <section style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Background with gradient and animation */}
-      <Continuous
-        animation="gradientShift"
-        as="div"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'var(--quantum-color-background-brand-gradient)',
-          backgroundSize: '400% 400%',
-          zIndex: -1,
-        }}
-      >
-        <div />
-      </Continuous>
-
-      <Paper
-        variant="section"
-        fullWidth
-        sx={{
-          position: 'relative',
-          backgroundColor: 'transparent',
-        }}
-      >
-        <Stagger
-          staggerDelay={0.15}
-          config={{ delay: 200, threshold: 0.1, rootMargin: '-100px' }}
+    <section id="cta" className="w-full py-16 bg-background">
+      <div className="mx-auto max-w-[1280px] px-6">
+        <div
+          className="relative rounded-3xl p-12 sm:p-16 text-center overflow-hidden shadow-2xl animate-on-scroll doodle-container"
           style={{
-            maxWidth: '1000px',
-            margin: '0 auto',
-            textAlign: 'center',
+            background:
+              'linear-gradient(164deg, rgb(28, 119, 227), rgba(28, 119, 227, 0.8))',
           }}
         >
-          {/* Main Headline */}
-          <Animated animation="fadeInUp" config={{ delay: 0 }}>
-            <GradientText
-              variant="h1"
-              gradient="hero"
-              sx={{
-                fontSize: {
-                  xs: '2.5rem',
-                  sm: '3rem',
-                  md: '4rem',
-                },
-                mb: 3,
-              }}
-            >
-              Ready to Transform Your Business?
-            </GradientText>
-          </Animated>
+          {/* Decorative sparkles */}
+          <DoodleSparkle className="doodle doodle-sparkle top-8 left-8 w-5 h-5 text-white/30" />
+          <DoodleSparkle className="doodle doodle-sparkle bottom-12 right-12 w-7 h-7 text-white/20" />
+          <DoodleSparkle className="doodle doodle-sparkle top-16 right-24 w-4 h-4 text-white/25" />
 
-          {/* Subheadline */}
-          <Animated animation="fadeInUp" config={{ delay: 150 }}>
+          <div className="animate-on-scroll">
             <Typography
-              variant="h3"
-              intent="primary"
-              sx={{
-                fontSize: {
-                  xs: '1.25rem',
-                  md: '1.5rem',
-                },
-                fontWeight: 400,
-                mb: 4,
-                lineHeight: 1.5,
-              }}
+              variant="h2"
+              align="center"
+              className="border-0 pb-0 text-3xl sm:text-4xl lg:text-5xl text-white leading-tight max-w-[560px] mx-auto"
             >
-              Join hundreds of small businesses already transforming their operations with AI
+              Ready to{' '}
+              <span className="text-highlight-amber">modernize</span>{' '}
+              your operations?
             </Typography>
-          </Animated>
+          </div>
 
-          {/* Pricing Preview Card */}
-          <Animated 
-            animation="fadeInUp" 
-            config={{ delay: 300 }}
-            style={{ marginBottom: '3rem' }}
-          >
-            <Paper
-              variant="feature"
-              glass
-              sx={{
-                maxWidth: '400px',
-                mx: 'auto',
-              }}
-            >
-              <Typography
-                variant="h3"
-                intent="primary"
-                sx={{
-                  fontWeight: 600,
-                  mb: 2,
-                }}
-              >
-                {PRICING_CONTENT.title}
-              </Typography>
-
-              <Continuous animation="pulse">
-                <Typography
-                  variant="h2"
-                  intent="success"
-                  sx={{
-                    fontSize: '3rem',
-                    fontWeight: 700,
-                    mb: 1,
-                  }}
-                >
-                  {PRICING_CONTENT.monthlyPrice}
-                  <Typography
-                    component="span"
-                    variant="h4"
-                    intent="secondary"
-                    sx={{
-                      fontSize: '1.25rem',
-                      fontWeight: 400,
-                    }}
-                  >
-                    /month
-                  </Typography>
-                </Typography>
-              </Continuous>
-
-              <Typography
-                variant="body1"
-                intent="secondary"
-                sx={{
-                  mb: 3,
-                }}
-              >
-                {PRICING_CONTENT.breakdown}
-              </Typography>
-
-              <Typography
-                variant="body2"
-                intent="secondary"
-                sx={{
-                  opacity: 0.8,
-                }}
-              >
-                {PRICING_CONTENT.additionalLocation}
-              </Typography>
-            </Paper>
-          </Animated>
-
-          {/* CTA Buttons */}
-          <Animated 
-            animation="fadeInUp" 
-            config={{ delay: 450 }}
-            style={{
-              display: 'flex',
-              gap: '1.5rem',
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              marginBottom: '2rem',
-            }}
-          >
-            <Hover animation="hoverLift">
-              <Button
-                intent="primary"
-                size="large"
-                component={Link}
-                href="/contact"
-                sx={{
-                  px: 4,
-                  py: 2,
-                  fontSize: '1.25rem',
-                  fontWeight: 600,
-                  backgroundColor: 'var(--quantum-color-status-success)',
-                  color: 'var(--quantum-color-text-on-success)',
-                  '&:hover': {
-                    backgroundColor: 'var(--quantum-color-status-success-hover)',
-                    boxShadow: '0 15px 35px var(--quantum-color-status-success-alpha-40)',
-                  },
-                  transition: 'all 0.3s ease',
-                }}
-              >
-                Get Early Access
-              </Button>
-            </Hover>
-
-            <Hover animation="hoverLift">
-              <Button
-                intent="secondary"
-                size="large"
-                component={Link}
-                href="/pricing"
-                sx={{
-                  px: 4,
-                  py: 2,
-                  fontSize: '1.25rem',
-                  fontWeight: 600,
-                  backgroundColor: 'var(--quantum-color-surface-glass)',
-                  border: '2px solid var(--quantum-color-border-glass)',
-                  '&:hover': {
-                    backgroundColor: 'var(--quantum-color-surface-glass-hover)',
-                    borderColor: 'var(--quantum-color-border-glass-hover)',
-                  },
-                  transition: 'all 0.3s ease',
-                }}
-              >
-                View Full Pricing
-              </Button>
-            </Hover>
-          </Animated>
-
-          {/* Guarantee Text */}
-          <Animated animation="fadeInUp" config={{ delay: 600 }}>
+          <div className="animate-on-scroll delay-100">
             <Typography
               variant="body1"
-              intent="secondary"
-              sx={{
-                fontSize: '1rem',
-                mb: 3,
-              }}
+              align="center"
+              className="mt-6 text-lg sm:text-xl text-white/80 max-w-[672px] mx-auto"
             >
-              {PRICING_CONTENT.guarantee}
+              {CTA.subheading}
             </Typography>
-          </Animated>
+          </div>
 
-          {/* Trust Indicators */}
-          <Animated 
-            animation="fadeInUp" 
-            config={{ delay: 750 }}
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '2rem',
-              flexWrap: 'wrap',
-              rowGap: '1rem',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Continuous animation="pulse">
-                <div style={{ fontSize: '1.5rem' }}>
-                  ✅
-                </div>
-              </Continuous>
-              <Typography
-                variant="body2"
-                intent="secondary"
-              >
-                No Technical Knowledge Required
-              </Typography>
-            </div>
+          {/* Dual CTAs */}
+          <div className="animate-scale-in delay-200 mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Button
+              variant="secondary"
+              size="lg"
+              className="rounded-full px-10 h-14 text-lg font-medium bg-white text-primary hover:bg-white/90 shadow-lg"
+            >
+              {CTA.buttonText}
+            </Button>
+            <Button
+              variant="ghost"
+              size="lg"
+              className="rounded-full px-8 h-14 text-lg font-medium text-white border border-white/30 hover:bg-white/10"
+            >
+              Get Early Access
+            </Button>
+          </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Continuous animation="pulse">
-                <div style={{ fontSize: '1.5rem' }}>
-                  🔒
-                </div>
-              </Continuous>
-              <Typography
-                variant="body2"
-                intent="secondary"
-              >
-                Your Data Stays Private
-              </Typography>
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Continuous animation="pulse">
-                <div style={{ fontSize: '1.5rem' }}>
-                  ⚡
-                </div>
-              </Continuous>
-              <Typography
-                variant="body2"
-                intent="secondary"
-              >
-                Setup in 5 Minutes
-              </Typography>
-            </div>
-          </Animated>
-        </Stagger>
-      </Paper>
+          {/* Trust signals */}
+          <div className="animate-on-scroll delay-400 mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-white/70 text-sm">
+            <span className="flex items-center gap-1.5">
+              <Check size={14} />
+              No credit card required
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Check size={14} />
+              Instant access
+            </span>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

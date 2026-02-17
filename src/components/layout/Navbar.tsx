@@ -1,191 +1,76 @@
-"use client";
+'use client';
 
-import { Button } from "@vritti/quantum-ui/Button";
-import { Paper } from "@vritti/quantum-ui/Paper";
-import { Typography } from "@vritti/quantum-ui/Typography";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Hover } from "@/components/ui/Animated";
-import ResponsiveWrapper from "@/components/ui/ResponsiveWrapper";
-import { NAVIGATION_ITEMS } from "@/lib/constants/content";
-import MobileMenu from "./MobileMenu";
+import { useState } from 'react';
+import Link from 'next/link';
+import { Button } from '@vritti/quantum-ui/Button';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { Menu, X } from 'lucide-react';
+import { Logo } from '@/components/ui/Logo';
+import { NAV_LINKS } from '@/lib/constants/content';
 
-export default function Navbar() {
-	const [isOpen, setIsOpen] = useState(false);
-	const [isScrolled, setIsScrolled] = useState(false);
+export function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 50);
-		};
+  return (
+    <header className="sticky top-0 z-50 w-full border-b border-vritti bg-background/95 backdrop-blur-sm">
+      <nav className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-6">
+        {/* Logo */}
+        <Link href="/" className="shrink-0">
+          <Logo />
+        </Link>
 
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+        {/* Desktop Nav Links */}
+        <ul className="hidden lg:flex items-center gap-1">
+          {NAV_LINKS.map((link) => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                className="px-4 py-2 text-sm font-medium rounded-lg transition-colors hover:bg-accent text-vritti-secondary"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-	return (
-		<>
-			<nav
-				style={{
-					position: "fixed",
-					top: 0,
-					left: 0,
-					right: 0,
-					zIndex: 1000,
-					borderBottom: "1px solid var(--quantum-color-border-glass)",
-				}}
-			>
-				<Paper
-					variant="minimal"
-					nav
-					sx={{
-						borderRadius: 0,
-						backgroundColor: isScrolled
-							? "var(--quantum-color-surface-glass)"
-							: "transparent",
-						backdropFilter: isScrolled ? "blur(20px)" : "none",
-						transition: "all 0.3s ease",
-					}}
-				>
-					<div
-						style={{
-							maxWidth: "1200px",
-							margin: "0 auto",
-							padding: "1rem 2rem",
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "space-between",
-						}}
-					>
-						{/* Logo */}
-						<Link href="/" style={{ textDecoration: "none" }}>
-							<Hover animation="hoverScale">
-								<Image
-									src="/vritti-logo.png"
-									alt="Vritti Logo"
-									width={50}
-									height={20}
-									priority
-								/>
-							</Hover>
-						</Link>
+        {/* Desktop Actions */}
+        <div className="hidden lg:flex items-center gap-3">
+          <ThemeToggle size="sm" />
+          <Button className="rounded-full px-6">Book Demo</Button>
+        </div>
 
-						{/* Desktop Navigation */}
-						<div
-							style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}
-						>
-							<ResponsiveWrapper breakpoint={768} showAbove={true}>
-								<nav
-									style={{ display: "flex", alignItems: "center", gap: "2rem" }}
-								>
-									{NAVIGATION_ITEMS.map((item) => (
-										<Link
-											key={item.href}
-											href={item.href}
-											style={{ textDecoration: "none" }}
-										>
-											<div
-												style={{
-													transition: "transform 0.2s ease",
-												}}
-												onMouseEnter={(e) => {
-													e.currentTarget.style.transform = "translateY(-2px)";
-												}}
-												onMouseLeave={(e) => {
-													e.currentTarget.style.transform = "translateY(0)";
-												}}
-											>
-												<Typography
-													variant="body1"
-													sx={{
-														color: "text.primary",
-														fontWeight: 500,
-														cursor: "pointer",
-														transition: "color 0.3s ease",
-														"&:hover": {
-															color: "primary.main",
-														},
-													}}
-												>
-													{item.label}
-												</Typography>
-											</div>
-										</Link>
-									))}
-								</nav>
-							</ResponsiveWrapper>
+        {/* Mobile Menu Button */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle size="sm" />
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </Button>
+        </div>
+      </nav>
 
-							{/* Theme Toggle */}
-							{/* <ThemeToggle /> */}
-
-							{/* CTA Button */}
-							<ResponsiveWrapper breakpoint={768} showAbove={true}>
-								<Hover animation="hoverScale">
-									<Button
-										intent="primary"
-										size="medium"
-										component={Link}
-										href="/contact"
-									>
-										Get Early Access
-									</Button>
-								</Hover>
-							</ResponsiveWrapper>
-
-							{/* Mobile Menu Button */}
-							<ResponsiveWrapper breakpoint={768} showAbove={false}>
-								<Hover animation="hoverScale">
-									<button
-										onClick={() => setIsOpen(true)}
-										style={{
-											display: "flex",
-											flexDirection: "column",
-											gap: "4px",
-											background: "none",
-											border: "none",
-											cursor: "pointer",
-											padding: "8px",
-										}}
-										aria-label="Open menu"
-									>
-										<span
-											style={{
-												width: "24px",
-												height: "2px",
-												backgroundColor: "var(--quantum-color-text-primary)",
-												borderRadius: "1px",
-												transition: "all 0.3s ease",
-											}}
-										/>
-										<span
-											style={{
-												width: "24px",
-												height: "2px",
-												backgroundColor: "var(--quantum-color-text-primary)",
-												borderRadius: "1px",
-												transition: "all 0.3s ease",
-											}}
-										/>
-										<span
-											style={{
-												width: "24px",
-												height: "2px",
-												backgroundColor: "var(--quantum-color-text-primary)",
-												borderRadius: "1px",
-												transition: "all 0.3s ease",
-											}}
-										/>
-									</button>
-								</Hover>
-							</ResponsiveWrapper>
-						</div>
-					</div>
-				</Paper>
-			</nav>
-
-			{/* Mobile Menu */}
-			<MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
-		</>
-	);
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="lg:hidden border-t border-vritti bg-background">
+          <div className="mx-auto max-w-[1280px] px-6 py-4 flex flex-col gap-2">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="px-4 py-3 text-sm font-medium rounded-lg hover:bg-accent text-vritti-secondary"
+              >
+                {link.label}
+              </a>
+            ))}
+            <Button className="rounded-full mt-2 w-full">Book Demo</Button>
+          </div>
+        </div>
+      )}
+    </header>
+  );
 }

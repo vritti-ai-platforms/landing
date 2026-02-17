@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
 
   experimental: {
-    optimizePackageImports: ['quantum-ui', 'framer-motion'],
+    optimizePackageImports: ['@vritti/quantum-ui', 'lucide-react'],
   },
 
   typescript: {

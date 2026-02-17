@@ -1,99 +1,56 @@
-/* Global Styles for Vritti AI */
+@import 'tailwindcss';
+@custom-variant dark (&:is(.dark *));
+@import '@vritti/quantum-ui/index.css';
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Figma-specific custom properties */
+:root {
+  --vritti-text-dark: #0a1d36;
+  --vritti-text-secondary: #5a728d;
+  --vritti-bg-light: rgba(245, 249, 253, 0.5);
+  --vritti-border: #e3effb;
+  --vritti-success: #4aa651;
+  --vritti-error: #dc2626;
+  --vritti-radius-card: 1rem;
+  --vritti-radius-pill: 9999px;
 }
 
+.dark {
+  --vritti-text-dark: #f0f4f8;
+  --vritti-text-secondary: #94a3b8;
+  --vritti-bg-light: rgba(30, 41, 59, 0.5);
+  --vritti-border: rgba(51, 65, 85, 0.5);
+  --vritti-success: #4ade80;
+  --vritti-error: #f87171;
+}
+
+/* Base styles */
 html {
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: var(--font-space-grotesk), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-sans);
+  color: var(--vritti-text-dark);
+  background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Essential animations */
-@keyframes pulse {
-  0%, 100% { 
-    opacity: 0.4; 
-  }
-  50% { 
-    opacity: 0.8; 
-  }
+/* Utility classes for Figma design tokens */
+.text-vritti-secondary {
+  color: var(--vritti-text-secondary);
 }
 
-/* Reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+.bg-vritti-light {
+  background-color: var(--vritti-bg-light);
 }
 
-/* Focus styles for accessibility */
-button:focus-visible,
-a:focus-visible,
-[role="button"]:focus-visible {
-  outline: 2px solid var(--quantum-color-action-primary, #0066ff);
-  outline-offset: 2px;
+.border-vritti {
+  border-color: var(--vritti-border);
 }
 
-/* Touch targets for mobile */
-@media (max-width: 768px) {
-  button, a, [role="button"] {
-    min-height: 44px;
-    min-width: 44px;
-  }
-}
+/* Scroll animation base */
+@import '../styles/animations.css';
 
-/* Button improvements */
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* Link improvements */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Image optimization */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Loading states */
-.loading {
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-/* Container max-widths */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-@media (min-width: 768px) {
-  .container {
-    padding: 0 2rem;
-  }
-}
+/* Visual effects - highlights, doodles, layouts */
+@import '../styles/effects.css';
