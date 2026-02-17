@@ -7,17 +7,12 @@ export const NAV_LINKS = [
 ] as const;
 
 export const HERO = {
-  badge: 'The Operating System for Modern Business',
-  heading: 'Run Your Entire Business on One OS.',
+  badge: 'The Platform for Modern Business',
+  heading: 'Run Your Entire Business on One Platform.',
   subheading:
     'A modular platform that manages leads, bookings, and inventory autonomously. Stop micromanaging, start growing.',
   primaryCta: 'Get Early Access',
   secondaryCta: 'View Interactive Demo',
-  trustSignals: [
-    'Free to start',
-    'Live in 24 hours',
-    'No lock-in',
-  ],
 } as const;
 
 export const DASHBOARD_STATS = [

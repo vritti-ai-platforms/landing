@@ -1,4 +1,4 @@
-import { Sparkles, Check } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { Button } from '@vritti/quantum-ui/Button';
 import { Typography } from '@vritti/quantum-ui/Typography';
 import { DashboardMockup } from '@/components/ui/DashboardMockup';
@@ -7,7 +7,7 @@ import { HERO } from '@/lib/constants/content';
 
 export function HeroSection() {
   return (
-    <section className="relative w-full bg-background">
+    <section className="relative w-full bg-background hero-gradient">
       <div className="mx-auto max-w-[1280px] px-6 pt-16 pb-8">
         {/* Content — load-based staggered animation */}
         <div className="flex flex-col items-center text-center hero-animate doodle-container">
@@ -30,7 +30,7 @@ export function HeroSection() {
               className="sm:text-5xl lg:text-[60px] font-semibold leading-tight max-w-[900px]"
             >
               Run Your Entire Business on{' '}
-              <span className="text-highlight-blue">One OS</span>.
+              <span className="text-highlight-shimmer">One Platform</span>.
             </Typography>
           </div>
 
@@ -61,17 +61,6 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* 5th: Trust signals — 800ms */}
-          <div className="hero-item">
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-vritti-secondary text-sm">
-              {HERO.trustSignals.map((signal) => (
-                <span key={signal} className="flex items-center gap-1.5">
-                  <Check size={14} className="text-green-600 dark:text-green-400 shrink-0" />
-                  {signal}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Dashboard mockup — 1000ms fade */}

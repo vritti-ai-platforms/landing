@@ -164,4 +164,10 @@
     transform: none;
     transition: none;
   }
+
+  .text-highlight-shimmer {
+    animation: none;
+    background-size: 100% 40%;
+    background-position: 0% 100%;
+  }
 }

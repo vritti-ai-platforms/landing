@@ -22,7 +22,7 @@ export function Footer() {
               <Logo />
             </Link>
             <Typography variant="body2" className="mt-4 leading-relaxed max-w-[280px] text-vritti-secondary">
-              The Operating System for Modern Business.
+              The Platform for Modern Business.
               Automate leads, bookings, and inventory with AI.
             </Typography>
           </div>

@@ -14,11 +14,11 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Vritti AI - The Operating System for Modern Business',
+  title: 'Vritti AI - The Platform for Modern Business',
   description:
     'A modular platform that manages leads, bookings, and inventory autonomously. Stop micromanaging, start growing.',
   openGraph: {
-    title: 'Vritti AI - The Operating System for Modern Business',
+    title: 'Vritti AI - The Platform for Modern Business',
     description:
       'A modular platform that manages leads, bookings, and inventory autonomously.',
     url: 'https://vrittiai.com',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Vritti AI - The Operating System for Modern Business',
+    title: 'Vritti AI - The Platform for Modern Business',
     description:
       'A modular platform that manages leads, bookings, and inventory autonomously.',
   },
