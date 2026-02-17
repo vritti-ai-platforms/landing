@@ -15,7 +15,7 @@ export function AICapabilitiesSection() {
   return (
     <section
       id="ai-capabilities"
-      className="w-full py-20 bg-vritti-light"
+      className="w-full py-16 bg-vritti-light"
     >
       <div className="mx-auto max-w-[1280px] px-6">
         {/* Header */}
@@ -29,12 +29,14 @@ export function AICapabilitiesSection() {
         </div>
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 animate-on-scroll">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Left: Chat mockup */}
-          <ChatMockup />
+          <div className="animate-on-scroll">
+            <ChatMockup />
+          </div>
 
           {/* Right: Accordion + Learning card */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 animate-on-scroll delay-200">
             {/* Accordion */}
             <div className="flex flex-col gap-4">
               {AI_ACCORDION_ITEMS.map((item, i) => (

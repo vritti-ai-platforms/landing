@@ -1,8 +1,67 @@
-/* Scroll-triggered animations */
+/* ===========================================
+   Scroll & Load Animation System
+   =========================================== */
+
+/* --- Shared easing & duration --- */
+:root {
+  --anim-easing: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --anim-duration: 700ms;
+}
+
+/* ===========================================
+   1. Hero — Load-based (plays on page load)
+   =========================================== */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-animate > .hero-item {
+  opacity: 0;
+  animation: hero-fade-up var(--anim-duration) var(--anim-easing) both;
+}
+
+.hero-animate > .hero-item:nth-child(1) { animation-delay: 200ms; }
+.hero-animate > .hero-item:nth-child(2) { animation-delay: 400ms; }
+.hero-animate > .hero-item:nth-child(3) { animation-delay: 600ms; }
+.hero-animate > .hero-item:nth-child(4) {
+  animation: hero-scale-in var(--anim-duration) var(--anim-easing) both;
+  animation-delay: 800ms;
+}
+.hero-animate > .hero-item:nth-child(5) { animation-delay: 800ms; }
+
+.hero-dashboard {
+  opacity: 0;
+  animation: hero-fade-up 800ms var(--anim-easing) both;
+  animation-delay: 1000ms;
+}
+
+/* ===========================================
+   2. Scroll-triggered — Fade + Slide Up
+   =========================================== */
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(30px);
+  transition:
+    opacity var(--anim-duration) var(--anim-easing),
+    transform var(--anim-duration) var(--anim-easing);
 }
 
 .animate-on-scroll.visible {
@@ -10,24 +69,97 @@
   transform: translateY(0);
 }
 
-/* Stagger children */
-.stagger-children > * {
+/* ===========================================
+   3. Scroll-triggered — Scale In (for CTAs)
+   =========================================== */
+.animate-scale-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transform: scale(0.9);
+  transition:
+    opacity var(--anim-duration) var(--anim-easing),
+    transform var(--anim-duration) var(--anim-easing);
 }
 
-.stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
-.stagger-children.visible > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
-.stagger-children.visible > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
-.stagger-children.visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
-.stagger-children.visible > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
-.stagger-children.visible > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+.animate-scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
 
-/* Respect reduced motion preference */
+/* ===========================================
+   4. Scroll-triggered — Slide from Left
+   =========================================== */
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity var(--anim-duration) var(--anim-easing),
+    transform var(--anim-duration) var(--anim-easing);
+}
+
+.animate-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===========================================
+   5. Stagger Children (cards, steps, etc.)
+   =========================================== */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(30px) scale(0.97);
+  transition:
+    opacity var(--anim-duration) var(--anim-easing),
+    transform var(--anim-duration) var(--anim-easing);
+}
+
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0ms;   opacity: 1; transform: translateY(0) scale(1); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 150ms; opacity: 1; transform: translateY(0) scale(1); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 300ms; opacity: 1; transform: translateY(0) scale(1); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 450ms; opacity: 1; transform: translateY(0) scale(1); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 600ms; opacity: 1; transform: translateY(0) scale(1); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 750ms; opacity: 1; transform: translateY(0) scale(1); }
+
+/* ===========================================
+   5b. Chat Stagger (conversation-paced delays)
+   =========================================== */
+.chat-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 500ms var(--anim-easing),
+    transform 500ms var(--anim-easing);
+}
+
+.chat-stagger.visible > *:nth-child(1) { transition-delay: 0ms;    opacity: 1; transform: translateY(0); }
+.chat-stagger.visible > *:nth-child(2) { transition-delay: 600ms;  opacity: 1; transform: translateY(0); }
+.chat-stagger.visible > *:nth-child(3) { transition-delay: 1200ms; opacity: 1; transform: translateY(0); }
+.chat-stagger.visible > *:nth-child(4) { transition-delay: 1800ms; opacity: 1; transform: translateY(0); }
+
+/* ===========================================
+   6. Delay Utilities (for elements within a
+      scroll-triggered parent section)
+   =========================================== */
+.delay-100.visible { transition-delay: 100ms; }
+.delay-200.visible { transition-delay: 200ms; }
+.delay-300.visible { transition-delay: 300ms; }
+.delay-400.visible { transition-delay: 400ms; }
+
+/* ===========================================
+   7. Reduced Motion — disable everything
+   =========================================== */
 @media (prefers-reduced-motion: reduce) {
+  .hero-animate > .hero-item,
+  .hero-dashboard {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+
   .animate-on-scroll,
-  .stagger-children > * {
+  .animate-scale-in,
+  .animate-slide-left,
+  .stagger-children > *,
+  .chat-stagger > * {
     opacity: 1;
     transform: none;
     transition: none;

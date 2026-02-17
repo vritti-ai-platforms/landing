@@ -11,8 +11,13 @@ export const HERO = {
   heading: 'Run Your Entire Business on One OS.',
   subheading:
     'A modular platform that manages leads, bookings, and inventory autonomously. Stop micromanaging, start growing.',
-  primaryCta: 'Start Free Trial',
+  primaryCta: 'Get Early Access',
   secondaryCta: 'View Interactive Demo',
+  trustSignals: [
+    'Free to start',
+    'Live in 24 hours',
+    'No lock-in',
+  ],
 } as const;
 
 export const DASHBOARD_STATS = [
@@ -232,49 +237,28 @@ export const SUITES = [
 export const CTA = {
   heading: 'Ready to modernize your operations?',
   subheading:
-    'Join hundreds of businesses already running on Vritti AI',
+    'See how Vritti can automate your business in under 24 hours.',
   buttonText: 'Book a Personalized Demo',
 } as const;
 
 export const FOOTER_LINKS = {
-  platform: {
-    title: 'Platform',
+  product: {
+    title: 'Product',
     links: [
-      { label: 'Overview', href: '#' },
       { label: 'Modules', href: '#modules' },
-      { label: 'Integrations', href: '#' },
-      { label: 'Security', href: '#' },
-      { label: 'API', href: '#' },
-    ],
-  },
-  resources: {
-    title: 'Resources',
-    links: [
-      { label: 'Documentation', href: '#' },
-      { label: 'Blog', href: '#' },
-      { label: 'Case Studies', href: '#' },
-      { label: 'Help Center', href: '#' },
-      { label: 'Community', href: '#' },
+      { label: 'AI Capabilities', href: '#ai-capabilities' },
+      { label: 'How It Works', href: '#how-it-works' },
+      { label: 'Pricing', href: '#cta' },
     ],
   },
   company: {
     title: 'Company',
     links: [
       { label: 'About Us', href: '#' },
-      { label: 'Careers', href: '#' },
-      { label: 'Partners', href: '#' },
       { label: 'Contact', href: '#' },
-      { label: 'Press Kit', href: '#' },
-    ],
-  },
-  legal: {
-    title: 'Legal',
-    links: [
       { label: 'Privacy Policy', href: '#' },
       { label: 'Terms of Service', href: '#' },
-      { label: 'Cookie Policy', href: '#' },
-      { label: 'GDPR', href: '#' },
-      { label: 'Compliance', href: '#' },
     ],
   },
 } as const;
+

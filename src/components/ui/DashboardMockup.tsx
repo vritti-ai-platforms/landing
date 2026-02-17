@@ -89,7 +89,7 @@ export function DashboardMockup() {
                   style={{
                     height: `${height}%`,
                     background:
-                      'linear-gradient(to top, var(--color-primary), color-mix(in oklch, var(--color-primary) 60%, transparent))',
+                      'linear-gradient(to top, var(--color-primary), color-mix(in oklch, var(--color-primary) 75%, transparent))',
                   }}
                 />
               ))}

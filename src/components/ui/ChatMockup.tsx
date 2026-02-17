@@ -15,7 +15,7 @@ export function ChatMockup() {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 p-6 flex flex-col gap-4 bg-vritti-light">
+      <div className="flex-1 p-6 flex flex-col gap-4 bg-vritti-light chat-stagger">
         {AI_CHAT_MESSAGES.map((msg, i) => (
           <div
             key={i}

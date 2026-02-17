@@ -14,11 +14,11 @@ export function ScrollAnimationInit() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.15, rootMargin: '0px 0px -20% 0px' }
     );
 
     document
-      .querySelectorAll('.animate-on-scroll, .stagger-children')
+      .querySelectorAll('.animate-on-scroll, .animate-scale-in, .animate-slide-left, .stagger-children, .chat-stagger')
       .forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();

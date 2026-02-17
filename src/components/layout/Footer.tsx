@@ -6,25 +6,24 @@ import { Logo } from '@/components/ui/Logo';
 import { FOOTER_LINKS } from '@/lib/constants/content';
 
 const footerSections = [
-  FOOTER_LINKS.platform,
-  FOOTER_LINKS.resources,
+  FOOTER_LINKS.product,
   FOOTER_LINKS.company,
-  FOOTER_LINKS.legal,
 ];
 
 export function Footer() {
   return (
     <footer className="w-full border-t border-vritti bg-background">
-      <div className="mx-auto max-w-[1280px] px-6 pt-16 pb-8">
+      <div className="mx-auto max-w-[1280px] px-6 pt-12 pb-8 animate-on-scroll">
         {/* Main footer content */}
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
           {/* Brand column */}
-          <div className="col-span-2 sm:col-span-3 lg:col-span-1 mb-4 lg:mb-0">
+          <div className="col-span-2 mb-4 sm:mb-0">
             <Link href="/">
               <Logo />
             </Link>
-            <Typography variant="body2" className="mt-4 leading-relaxed max-w-[220px] text-vritti-secondary">
-              The Operating System for Modern Business
+            <Typography variant="body2" className="mt-4 leading-relaxed max-w-[280px] text-vritti-secondary">
+              The Operating System for Modern Business.
+              Automate leads, bookings, and inventory with AI.
             </Typography>
           </div>
 
@@ -51,8 +50,8 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <Separator className="mt-12 bg-vritti-light" />
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <Separator className="mt-10 bg-vritti-light" />
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <Typography variant="caption" className="text-vritti-secondary">
             &copy; 2026 Vritti AI. All rights reserved.
           </Typography>
@@ -62,21 +61,21 @@ export function Footer() {
               className="transition-colors hover:text-foreground text-vritti-secondary"
               aria-label="Twitter"
             >
-              <Twitter size={20} />
+              <Twitter size={18} />
             </a>
             <a
               href="#"
               className="transition-colors hover:text-foreground text-vritti-secondary"
               aria-label="LinkedIn"
             >
-              <Linkedin size={20} />
+              <Linkedin size={18} />
             </a>
             <a
               href="#"
               className="transition-colors hover:text-foreground text-vritti-secondary"
               aria-label="GitHub"
             >
-              <Github size={20} />
+              <Github size={18} />
             </a>
           </div>
         </div>

@@ -33,7 +33,7 @@ const colorStyles = {
 
 export function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="w-full py-20 bg-background">
+    <section id="how-it-works" className="w-full py-16 bg-background">
       <div className="mx-auto max-w-[1280px] px-6">
         {/* Header */}
         <div className="text-center mb-16 animate-on-scroll">
