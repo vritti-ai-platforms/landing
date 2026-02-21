@@ -251,7 +251,7 @@ export const FOOTER_LINKS = {
     links: [
       { label: 'About Us', href: '#' },
       { label: 'Contact', href: '#' },
-      { label: 'Privacy Policy', href: '#' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
       { label: 'Terms of Service', href: '#' },
     ],
   },
